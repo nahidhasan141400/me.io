@@ -6,6 +6,9 @@ const ejs = require('ejs');
 const path = require('path');
 require('dotenv').config();
 
+// import coustom lib
+const {Read , Write} = require('./lib/crud');
+
 // set port 
 const PORT = process.env.PORT || 3300;
 
@@ -20,6 +23,8 @@ app.use(cookieParser());
 // set Template engine
 app.set('views', path.join(__dirname, '/views'))
 app.set('view engine', 'ejs');
+
+const dataPath = path.join(__dirname+'/data/data.json');
 
 // set route 
 // set home route 
@@ -40,6 +45,13 @@ app.set('view engine', 'ejs');
         }
         
     })
+
+// api route 
+
+app.get('/data',(req,res)=>{
+    let data = Read(dataPath);
+    res.status(200).json(data);
+})
 
 // init server 
 app.listen(PORT , () => {
