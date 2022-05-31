@@ -12,6 +12,14 @@ const {Read , Write} = require('./lib/crud');
 // set port 
 const PORT = process.env.PORT || 3300;
 
+// config cors 
+const cors = require("cors");
+app.use(cors({
+    origin : "*"
+}))
+
+
+
 
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: false }));
@@ -39,7 +47,7 @@ const dataPath = path.join(__dirname+'/data/data.json');
         let {username , password} = req.body;
         console.log(process.env.PASSWORD);
         if(username === process.env.USER_NAME && password === process.env.PASSWORD){
-            res.send(`<h1> wellcome ${username} you login sucssesfully</h1>`)
+            res.render("home")
         }else{
             res.send('wrong password')
         }
