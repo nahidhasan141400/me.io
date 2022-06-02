@@ -45,9 +45,9 @@ const dataPath = path.join(__dirname+'/data/data.json');
 // set login route 
     app.post('/login',(req,res)=>{
         let {username , password} = req.body;
-        console.log(process.env.PASSWORD);
+        
         if(username === process.env.USER_NAME && password === process.env.PASSWORD){
-            res.render("home")
+            res.render("user")
         }else{
             res.send('wrong password')
         }
