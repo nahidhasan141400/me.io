@@ -4,13 +4,6 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/style.css" />
-    <link
-      rel="shortcut icon"
-      href="./assets/Images/favicon.ico"
-      type="image/x-icon"
-    />
-
     <!-- link  -->
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/fontawesome.min.js"
@@ -26,40 +19,38 @@
       referrerpolicy="no-referrer"
     />
     <!-- link  -->
+    <link rel="stylesheet" href="style.css" />
     <title>me.io</title>
   </head>
   <body>
-    <nav>
-      <ul id="navList">
-        <li><a id="Documentation" href="#">Documentation</a></li>
-        <li>
-          <a href="https://github.com/nahidhasan141400/me.io">
-            <i class="fa-brands fa-github"></i
-          ></a>
-        </li>
-      </ul>
-    </nav>
+    <header>
+      <img src="./assets/Images/text-me.io.png" alt="" />
+      <h1>api</h1>
+    </header>
     <main>
-      <div id="hero">
-        <img id="heroImg" src="./img/hero.png" alt="" />
-        <h1 id="hero-text">
-          Me.io make your portfolio dynamic. Make development and maintenance
-          easy for you
-        </h1>
-        <a href="/login" id="start-button" type="button">Start Now</a>
-      </div>
-      <div id="DevIntro">
-        <h1>Developers</h1>
-        <div id="devName">
-          <div class="about-dev">
-            <img class="devIntro-img" src="./img/nahid.jpg" alt="Developers" />
-            <h2>Nahid Hasan</h2>
-          </div>
-          <div class="about-dev">
-            <img class="devIntro-img" src="./img/yasin.png" alt="Developers" />
-            <h2>Md Kawsar Islam Yeasin</h2>
-          </div>
+      <nav>
+        <ol>
+          <li>
+            <a href="#"><i class="fa-solid fa-link"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa-solid fa-database"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa-solid fa-pen-to-square"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa-solid fa-arrow-right-from-bracket"></i></i></a>
+          </li>
+        </ol>
+      </nav>
+      <div class="main-content">
+        <!-- all data gose heare  -->
+        <div class="link-api-help">
+          <h1>data api <i class="fa-solid fa-link"></i>url</h1>
+          <input type="text" value="http://localhost:3300" readonly />
         </div>
+        <!-- end  -->
       </div>
     </main>
   </body>
