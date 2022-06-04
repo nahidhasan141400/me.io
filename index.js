@@ -40,18 +40,36 @@ const dataPath = path.join(__dirname+'/data/data.json');
         res.render("home");
     });
     app.get('/login',(req,res)=>{
-        res.render("login");
+        if(req.cookies.me === '1234'){
+            res.redirect('/api')
+        }else{
+            res.render("login");
+        }
     });
+    app.get('/api',(req,res)=>{
+        console.log(req.cookies);
+        if (req.cookies.me === '1234') {
+            res.render('user')
+        }else{
+            res.redirect('/login');
+        }
+        
+    })
 // set login route 
     app.post('/login',(req,res)=>{
         let {username , password} = req.body;
         
         if(username === process.env.USER_NAME && password === process.env.PASSWORD){
-            res.render("user")
+            res.cookie('me','1234')
+            res.redirect("/api")
         }else{
             res.send('wrong password')
         }
         
+    })
+    app.get('/logout',(req,res)=>{
+        res.cookie('me','');
+        res.redirect('/')
     })
 
 // api route 

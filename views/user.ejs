@@ -1,9 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
     <!-- link  -->
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/fontawesome.min.js"
@@ -39,16 +41,23 @@
           <li>
             <a href="#"><i class="fa-solid fa-pen-to-square"></i></a>
           </li>
+          <li>
+            <a href="/logout"><i class="fa-solid fa-arrow-right-from-bracket"></i></i></a>
+          </li>
         </ol>
       </nav>
       <div class="main-content">
         <!-- all data gose heare  -->
         <div class="link-api-help">
           <h1>data api <i class="fa-solid fa-link"></i>url</h1>
-          <input type="text" value="http://localhost:3300" readonly />
+          <input type="text" value="" id="data-inp" readonly/>
         </div>
         <!-- end  -->
       </div>
     </main>
+    <script>
+      let dataInp = document.querySelector('#data-inp');
+      dataInp.value = `http://${window.location.host}/data`;
+    </script>
   </body>
 </html>
