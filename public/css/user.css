@@ -3,10 +3,13 @@
   padding: 0;
   margin: 0;
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
   outline: none;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
+
 
 body {
   width: 100%;
@@ -23,11 +26,11 @@ header {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 header img {
@@ -47,7 +50,7 @@ main {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 9fr;
-  grid-template-columns: 1fr 9fr;
+      grid-template-columns: 1fr 9fr;
   position: relative;
 }
 
@@ -58,11 +61,11 @@ main nav {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 main nav ol {
@@ -75,15 +78,15 @@ main nav ol {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: space-evenly;
-  -ms-flex-pack: space-evenly;
-  justify-content: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 main nav ol li {
@@ -102,11 +105,11 @@ main nav ol li a {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   text-decoration: none;
   color: #25283d;
   font-size: 25px;
@@ -121,8 +124,12 @@ main nav ol li a:hover {
 
 main nav ol li a:active {
   -webkit-transform: scale(107%);
-  transform: scale(107%);
+          transform: scale(107%);
   border: 6px solid #cdcdcd;
+}
+
+main nav ol li a.active {
+  border: 10px solid #4545c4;
 }
 
 main .main-content {
@@ -169,4 +176,100 @@ main .main-content::-webkit-scrollbar-thumb {
   font-size: 17px;
   padding: 7px 5px;
   border-radius: 10px;
+}
+
+.show-data {
+  width: 100%;
+  padding: 20px;
+  position: relative;
+}
+
+.show-data .titel {
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+}
+
+.show-data .titel h1 {
+  text-transform: capitalize;
+  color: #cdcdcd;
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.show-data .s-data {
+  width: 100%;
+  position: relative;
+  padding: 10px;
+  border: 2px dotted #4545c4;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.show-data .s-data:hover {
+  background: rgba(255, 255, 255, 0.048);
+}
+
+.show-data .s-data .header {
+  width: 100%;
+  padding-bottom: 5px;
+}
+
+.show-data .s-data .header h1 {
+  font-size: 18px;
+  color: #cdcdcd;
+}
+
+.show-data .s-data .show-body {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.show-data .s-data .show-body .data-input {
+  -webkit-box-flex: 9;
+      -ms-flex: 9;
+          flex: 9;
+  position: relative;
+}
+
+.show-data .s-data .show-body .data-input input {
+  width: 90%;
+  font-size: 15px;
+  color: #4545c4;
+  border: none;
+  background: transparent;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.show-data .s-data .show-body .data-input input:focus {
+  background: #cdcdcd;
+}
+
+.show-data .s-data .show-body .option {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  font-size: 20px;
+}
+
+.show-data .s-data .show-body .option a {
+  color: #cdcdcd;
+  margin: 0 5px;
+  padding: 0 10px;
+}
+
+.show-data .s-data .show-body .option a:hover {
+  color: #4545c4;
 }

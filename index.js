@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-
+const { v4 : uuidv4 } = require('uuid') ;
 const cookieParser = require('cookie-parser');
 const ejs = require('ejs');
 const path = require('path');
@@ -19,7 +19,9 @@ app.use(cors({
 }))
 
 
-
+// uuid
+// uuidv4(); // ⇨ '9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d'
+console.log(uuidv4());
 
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: false }));
@@ -54,6 +56,10 @@ const dataPath = path.join(__dirname+'/data/data.json');
             res.redirect('/login');
         }
         
+    })
+    app.get('/datas',(req,res)=>{
+        let data = Read(dataPath);
+        res.render('data',{data})
     })
 // set login route 
     app.post('/login',(req,res)=>{

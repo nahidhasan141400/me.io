@@ -1,14 +1,25 @@
 {
+    
     "name": "Nahid hasan Sagar",
     "des":"Ever wonder what “stars” might look like in the mix? Well, you're in luck! We've cooked up some examples of how you could use the “stars” icon in your projects, whether they’re apps, interfaces, or print designs.",
     "links":{
-        "facebook": "www.facebook.com"
+        "facebook": "www.facebook.com",
+        "instagram":"www.istagram.com"
     },
     "project":{
         "ncrip":{
+            "id":"1",
             "name":"ncrip",
             "link": "npm.ncrip.com",
-            "des":"ncrip was text decription packedg"
+            "des":"ncrip was text decription packedg",
+            "thumbnail":"./img/example"
+        },
+        "portfolio":{
+            "id":"1",
+            "name":"ncrip",
+            "link": "npm.ncrip.com",
+            "des":"ncrip was text decription packedg",
+            "thumbnail":"./img/example"
         }
     }
 }
