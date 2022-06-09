@@ -35,29 +35,32 @@ app.set('views', path.join(__dirname, '/views'))
 app.set('view engine', 'ejs');
 
 const dataPath = path.join(__dirname+'/data/data.json');
+const cookPath = path.join(__dirname+'/data/cook.json');
 
+// import auth midelware 
+let {auth,Unauth} = require('./medelware/auth');
+const { write } = require('fs');
 // set route 
 // set home route 
     app.get('/',(req,res)=>{
         res.render("home");
     });
-    app.get('/login',(req,res)=>{
-        if(req.cookies.me === '1234'){
-            res.redirect('/api')
-        }else{
+    app.get('/login',Unauth,(req,res)=>{
+       
             res.render("login");
-        }
+        
     });
-    app.get('/api',(req,res)=>{
-        console.log(req.cookies);
-        if (req.cookies.me === '1234') {
-            res.render('user')
-        }else{
-            res.redirect('/login');
-        }
+    app.get('/api',auth,(req,res)=>{
+        // console.log(req.cookies);
+        // if (req.cookies.me === '1234') {
+        //     res.render('user')
+        // }else{
+        //     res.redirect('/login');
+        // }
+        res.render('user')
         
     })
-    app.get('/datas',(req,res)=>{
+    app.get('/datas',auth,(req,res)=>{
         let data = Read(dataPath);
         res.render('data',{data})
     })
@@ -66,7 +69,9 @@ const dataPath = path.join(__dirname+'/data/data.json');
         let {username , password} = req.body;
         
         if(username === process.env.USER_NAME && password === process.env.PASSWORD){
-            res.cookie('me','1234')
+            let newcook = uuidv4();
+            res.cookie('me',newcook);
+            Write(cookPath,{cook : newcook})
             res.redirect("/api")
         }else{
             res.send('wrong password')
