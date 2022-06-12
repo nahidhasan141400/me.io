@@ -1,0 +1,30 @@
+.bg1{
+    position: absolute;
+   
+    height: 100px;
+    width: 100px;
+    background-color: rgb(34, 0, 255);
+    left: 10px;
+    top: 30px;
+    filter: blur(80px);
+}
+.bg2{
+    position: absolute;
+   
+    height: 200px;
+    width: 200px;
+    background-color: rgb(0, 221, 255);
+    left: 10px;
+    bottom: 30px;
+    filter: blur(80px);
+}
+.bg3{
+    position: absolute;
+   
+    height: 200px;
+    width: 200px;
+    background-color: rgb(111, 255, 231);
+    right: 10px;
+    bottom: 40%;
+    filter: blur(80px);
+}

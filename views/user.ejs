@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <link rel="shortcut icon" href="./img/logo.ico" type="image/x-icon" />
+    
+    <!-- link  -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/fontawesome.min.js"
+      integrity="sha512-5qbIAL4qJ/FSsWfIq5Pd0qbqoZpk5NcUVeAAREV2Li4EKzyJDEGlADHhHOSSCw0tHP7z3Q4hNHJXa81P92borQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- link  -->
+    <link rel="stylesheet" href="./css/user.css" /><link rel="stylesheet" href="./css/bg.css">
+    <link rel="stylesheet" href="./css/flip-to-square.css" />
+    <title>me.io</title>
+  </head>
+  <body>
+    <div
+      style="
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #cdcdcd;
+        z-index: 100;
+        transition: all 3s;
+      "
+      class="loader"
+    >
+      <div class="flip">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+    <!-- loader end  -->
+    <div class="bg1"></div>
+    <div class="bg2"></div>
+    <div class="bg3"></div>
+    <header>
+      <img src="./img/text-me.io.png" alt="" />
+      <h1>api</h1>
+    </header>
+    <main>
+      <nav>
+        <ol>
+          <li>
+            <a class="active"  href="#"><i class="fa-solid fa-link"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa-solid fa-database"></i></a>
+          </li>
+          <li>
+            <a href="/datas"><i class="fa-solid fa-pen-to-square"></i></a>
+          </li>
+          <li>
+            <a href="/logout"><i class="fa-solid fa-arrow-right-from-bracket"></i></i></a>
+          </li>
+        </ol>
+      </nav>
+      <div class="main-content">
+        <!-- all data gose heare  -->
+        <div class="link-api-help">
+          <h1>data api <i class="fa-solid fa-link"></i>url</h1>
+          <input type="text" value="" id="data-inp" readonly/>
+        </div>
+        <!-- end  -->
+      </div>
+    </main>
+    <script>
+      let dataInp = document.querySelector('#data-inp');
+      dataInp.value = `http://${window.location.host}/data`;
+    </script>
+    <script src="./js/loader.js"></script>
+  </body>
+</html>

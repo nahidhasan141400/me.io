@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="shortcut icon" href="./img/logo.ico" type="image/x-icon" />
+
+    <!-- link  -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/fontawesome.min.js"
+      integrity="sha512-5qbIAL4qJ/FSsWfIq5Pd0qbqoZpk5NcUVeAAREV2Li4EKzyJDEGlADHhHOSSCw0tHP7z3Q4hNHJXa81P92borQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./css/bg.css" />
+    <link rel="stylesheet" href="./css/flip-to-square.css" />
+    <!-- link  -->
+    <title>me.io</title>
+  </head>
+  <body>
+    <div
+      style="
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #cdcdcd;
+        z-index: 100;
+        transition: all 3s;
+      "
+      class="loader"
+    >
+      <div class="flip">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+    <!-- loader end  -->
+    <div class="bg1"></div>
+    <div class="bg2"></div>
+    <div class="bg3"></div>
+    <nav>
+      <ul id="navList">
+        <li><a id="Documentation" href="#">Documentation</a></li>
+        <li>
+          <a href="https://github.com/nahidhasan141400/me.io">
+            <i class="fa-brands fa-github"></i
+          ></a>
+        </li>
+      </ul>
+    </nav>
+    <main>
+      <div id="hero">
+        <img id="heroImg" src="./img/hero.png" alt="" />
+        <h1 id="hero-text">
+          Me.io make your portfolio dynamic. Make development and maintenance
+          easy for you
+        </h1>
+        <a href="/api" id="start-button" type="button">Start Now</a>
+      </div>
+      <div id="DevIntro">
+        <h1>Developers</h1>
+        <div id="devName">
+          <div class="about-dev">
+            <img class="devIntro-img" src="./img/nahid.jpg" alt="Developers" />
+            <h2>Nahid Hasan</h2>
+          </div>
+          <div class="about-dev">
+            <img class="devIntro-img" src="./img/yasin.png" alt="Developers" />
+            <h2>Md Kawsar Islam Yeasin</h2>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- loader js  -->
+    <script src="./js/loader.js"></script>
+  </body>
+</html>

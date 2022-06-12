@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./img/logo.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./css/bg.css">
+    <!-- link  -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/fontawesome.min.js"
+      integrity="sha512-5qbIAL4qJ/FSsWfIq5Pd0qbqoZpk5NcUVeAAREV2Li4EKzyJDEGlADHhHOSSCw0tHP7z3Q4hNHJXa81P92borQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- link  -->
+    <link rel="stylesheet" href="./css/user.css" />
+    <link rel="stylesheet" href="./css/flip-to-square.css" />
+    <title>me.io</title>
+  </head>
+  <body>
+    <div
+      style="
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #cdcdcd;
+        z-index: 100;
+        transition: all 3s;
+      "
+      class="loader"
+    >
+      <div class="flip">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+    <!-- loader end  -->
+      
+    <div class="bg1"></div>
+    <div class="bg2"></div>
+    <div class="bg3"></div>
+      
+    <header>
+      <img src="./img/text-me.io.png" alt="" />
+      <h1>data</h1>
+    </header>
+    <main>
+      <nav>
+        <ol>
+          <li>
+            <a href="/api"><i class="fa-solid fa-link"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa-solid fa-database"></i></a>
+          </li>
+          <li>
+            <a class="active" href="#"><i class="fa-solid fa-pen-to-square"></i></a>
+          </li>
+          <li>
+            <a href="/logout"><i class="fa-solid fa-arrow-right-from-bracket"></i></i></a>
+          </li>
+        </ol>
+      </nav>
+      <div class="main-content">
+        <!-- all data gose heare  -->
+        <div class="show-data">
+            <div class="titel">
+                <h1>static data</h1>
+            </div>
+            <!-- nahid  -->
+            <div class="s-data">
+                <div class="header">
+                    <h1>name</h1>
+                </div>
+                <div class="show-body">
+                    <div class="data-input">
+                        <input value="<%= data.name %>" type="text">
+                    </div>
+                    <div class="option">
+                        <a href="/editName"><i class="fa-solid fa-pen"></i></a>
+                        <a href="/dellet/141400"><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+            </div>
+            <!-- nahid  -->
+            <div class="s-data">
+                <div class="header">
+                    <h1>description</h1>
+                </div>
+                <div class="show-body">
+                    <div class="data-input">
+                        <input value="<%= data.des %>" type="text">
+                    </div>
+                    <div class="option">
+                        <a href="/editName"><i class="fa-solid fa-pen"></i></a>
+                        <a href="/deletedes"><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+            </div>
+            <!-- nahid  -->
+            
+            <!-- nahid  -->
+            <div class="titel">
+                <h1>Links</h1>
+            </div>
+            <!-- nahid  -->
+            <!-- console.log(`${key}: ${user[key]}`); -->
+            <%
+            const isEmptyLinks = Object.keys(data.links).length === 0;
+            if(isEmptyLinks){ %> <div class="titel">no Links</div><%}else{
+            for (const key in data.links) {
+                %>
+
+                <div class="s-data">
+                    <div class="header">
+                        <h1><%= key %></h1>
+                    </div>
+                    <div class="show-body">
+                        <div class="data-input">
+                            <input value="<%= data.links[key]%>" type="text">
+                        </div>
+                        <div class="option">
+                            <a href="#"><i class="fa-solid fa-pen"></i></a>
+                            <a href="#"><i class="fa-solid fa-trash"></i></a>
+                        </div>
+                    </div>
+                </div>
+             <%   
+            }}
+            %>
+            <div class="titel">
+                <a 
+                style="
+                    text-decoration: none;
+                    margin-bottom: 20px;
+                "
+                href="/add/sigeldata"><h1><i class="fa-solid fa-plus"></i> add new link</h1></a>
+            </div>
+            <!-- end of link loop  -->
+            <div class="titel">
+                <h1>project</h1>
+            </div>
+            
+            
+<%          const isEmpty = Object.keys(data.project).length === 0;
+            if(isEmpty){ %> <div class="titel">no project</div><%}else{
+            for (const key in data.project) {
+                
+                %>
+                <div class="s-data">
+                    <div class="header">
+                        <h1><%= key %></h1>
+                    </div>
+                    <div class="show-body">
+                        <div class="data-input">
+                            <input value="<%= data.project[key].name %>" type="text">
+                        </div>
+                        <div class="option">
+                            
+                        </div>
+                    </div>
+                    <div class="show-body">
+                        <div class="data-input">
+                            <input value="<%= data.project[key].link %>" type="text">
+                        </div>
+                        <div class="option">
+                            
+                        </div>
+                    </div>
+                    <div class="show-body">
+                        <div class="data-input">
+                            <input value="<%= data.project[key].des %>" type="text">
+                        </div>
+                        <div class="option">
+                            
+                        </div>
+                    </div>
+                    <div class="show-body">
+                        <div class="data-input">
+                            <input value="<%= data.project[key].img %>" type="text">
+                        </div>
+                        <div class="option">
+                            <a href="/updateProject/<%= data.project[key].id %>"><i class="fa-solid fa-pen"></i></a>
+                            <a href="delletproduct/<%= data.project[key].id %>"><i class="fa-solid fa-trash"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+
+           <% } }%>
+           <div class="titel">
+                <a 
+                style="
+                    text-decoration: none;
+                    margin-bottom: 20px;
+                "
+                href="/addProject"><h1><i class="fa-solid fa-plus"></i> add new project</h1></a>
+            </div>
+            
+            
+        </div>
+        <!-- end  -->
+      </div>
+    </main>
+    
+    <script src="./js/loader.js"></script>
+  </body>
+</html>
