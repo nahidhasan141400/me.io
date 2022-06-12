@@ -1,0 +1,64 @@
+/**
+  * Flip to square
+  *
+  * @author jh3y - jheytompkins.com
+*/
+@-webkit-keyframes flip {
+  0% {
+    -webkit-transform: rotateX(-90deg);
+            transform: rotateX(-90deg); }
+  50%,
+  75% {
+    -webkit-transform: rotateX(0);
+            transform: rotateX(0); }
+  100% {
+    opacity: 0;
+    -webkit-transform: rotateX(0);
+            transform: rotateX(0); } }
+@keyframes flip {
+  0% {
+    -webkit-transform: rotateX(-90deg);
+            transform: rotateX(-90deg); }
+  50%,
+  75% {
+    -webkit-transform: rotateX(0);
+            transform: rotateX(0); }
+  100% {
+    opacity: 0;
+    -webkit-transform: rotateX(0);
+            transform: rotateX(0); } }
+
+.flip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  height: 200px;
+  width: 200px; 
+}
+
+  .flip div {
+    -webkit-animation: flip 1.5s calc(var(--delay) * 1s) infinite backwards;
+            animation: flip 1.5s calc(var(--delay) * 1s) infinite backwards;
+    /* background-color: #1c1c1c; */
+    
+  background: url('../img/logo.ico');
+  background-size: 100%;
+   }
+    .flip div:nth-child(1) {
+      --delay: 0.1; }
+    .flip div:nth-child(2) {
+      --delay: 0.2; }
+    .flip div:nth-child(3) {
+      --delay: 0.3; }
+    .flip div:nth-child(4) {
+      --delay: 0.4; }
+    .flip div:nth-child(5) {
+      --delay: 0.5; }
+    .flip div:nth-child(6) {
+      --delay: 0.6; }
+    .flip div:nth-child(7) {
+      --delay: 0.7; }
+    .flip div:nth-child(8) {
+      --delay: 0.8; }
+    .flip div:nth-child(9) {
+      --delay: 0.9; }

@@ -8,8 +8,7 @@
   font-family: 'Montserrat', sans-serif;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
-}
-
+} 
 
 body {
   width: 100%;
@@ -197,6 +196,20 @@ main .main-content::-webkit-scrollbar-thumb {
   font-weight: 300;
 }
 
+.show-data .titel button {
+  font-size: 20px;
+  font-weight: 700;
+  padding: 5px 15px;
+  border: 1px solid #4545c4;
+  border-radius: 20px;
+  color: #cdcdcd;
+  background-color: transparent;
+}
+
+.show-data .titel button:hover {
+  background: rgba(132, 132, 132, 0.236);
+}
+
 .show-data .s-data {
   width: 100%;
   position: relative;
@@ -249,6 +262,28 @@ main .main-content::-webkit-scrollbar-thumb {
 
 .show-data .s-data .show-body .data-input input:focus {
   background: #cdcdcd;
+}
+
+.show-data .s-data .show-body .data-input textarea {
+  width: 100%;
+  height: 400px;
+  color: #4545c4;
+  border: 2px solid #4545c4;
+  background: transparent;
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+.show-data .s-data .show-body .data-input textarea::-webkit-scrollbar {
+  width: 2px;
+  height: 0px;
+}
+
+.show-data .s-data .show-body .data-input textarea::-webkit-scrollbar-thumb {
+  background-color: #cdcdcd;
+  border-radius: 5px;
 }
 
 .show-data .s-data .show-body .option {

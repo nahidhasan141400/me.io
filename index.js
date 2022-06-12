@@ -21,7 +21,7 @@ app.use(cors({
 
 // uuid
 // uuidv4(); // ⇨ '9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d'
-console.log(uuidv4());
+// console.log(uuidv4());
 
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: false }));
@@ -39,7 +39,7 @@ const cookPath = path.join(__dirname+'/data/cook.json');
 
 // import auth midelware 
 let {auth,Unauth} = require('./medelware/auth');
-const { write } = require('fs');
+
 // set route 
 // set home route 
     app.get('/',(req,res)=>{
@@ -63,6 +63,69 @@ const { write } = require('fs');
     app.get('/datas',auth,(req,res)=>{
         let data = Read(dataPath);
         res.render('data',{data})
+    })
+    // add route 
+    app.get('/addProject',auth,(req,res)=>{
+        res.render('addProject')
+    });
+    app.post('/addProject',auth,(req,res)=>{
+        let data = Read(dataPath);
+        let tempdata = {...data};
+        let {name , link , img , des} = req.body;
+        let id = uuidv4();
+        tempdata.project[name] = {
+            id,
+            name,
+            link,
+            des,
+            img
+        }
+        Write(dataPath,tempdata);
+        res.redirect('/datas')
+    })
+    // update project data
+    app.get('/updateProject/:id',auth,(req,res)=>{
+        let id = req.params.id;
+        let data = Read(dataPath);
+        let index;
+        for (const key in data.project) {
+            if(data.project[key].id === id){
+                 index = key;
+            };
+        };
+        let d = data.project[index];
+        res.render('uppro',{data:data.project[index]})
+    })
+    app.post('/uppro',auth,(req,res)=>{
+        let {id ,name , link , des , img}=req.body;
+        let data = Read(dataPath);
+        let tempdata = {...data};
+        let index;
+        for (const key in tempdata.project) {
+            if(tempdata.project[key].id === id){
+                 index = key;
+            };
+        };
+        tempdata.project[index] = {
+            id,name,link,des,img
+        }
+        Write(dataPath,tempdata);
+        res.redirect('/datas')
+    })
+    // dellet project data 
+    app.get('/delletproduct/:id',auth,(req,res)=>{
+        const {id} = req.params;
+        let data = Read(dataPath);
+        let tempdata = {...data};
+        let index;
+        for (const key in tempdata.project) {
+            if(tempdata.project[key].id === id){
+                 index = key;
+            };
+        };
+        delete tempdata.project[index];
+        Write(dataPath,tempdata);
+        res.redirect('/datas');
     })
 // set login route 
     app.post('/login',(req,res)=>{

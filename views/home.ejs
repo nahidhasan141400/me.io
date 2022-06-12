@@ -5,11 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/style.css" />
-    <link
-      rel="shortcut icon"
-      href="./assets/Images/favicon.ico"
-      type="image/x-icon"
-    />
+    <link rel="shortcut icon" href="./img/logo.ico" type="image/x-icon" />
 
     <!-- link  -->
     <script
@@ -26,10 +22,40 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="./css/bg.css" />
+    <link rel="stylesheet" href="./css/flip-to-square.css" />
     <!-- link  -->
     <title>me.io</title>
   </head>
   <body>
+    <div
+      style="
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #cdcdcd;
+        z-index: 100;
+        transition: all 3s;
+      "
+      class="loader"
+    >
+      <div class="flip">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+    <!-- loader end  -->
     <div class="bg1"></div>
     <div class="bg2"></div>
     <div class="bg3"></div>
@@ -66,5 +92,7 @@
         </div>
       </div>
     </main>
+    <!-- loader js  -->
+    <script src="./js/loader.js"></script>
   </body>
 </html>
