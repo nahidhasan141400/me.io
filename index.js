@@ -127,6 +127,32 @@ let {auth,Unauth} = require('./medelware/auth');
         Write(dataPath,tempdata);
         res.redirect('/datas');
     })
+    // edit name and ds
+    app.get('/editName',auth,(req,res)=>{
+        let data = Read(dataPath);
+        res.render('addName',{
+            name:data.name,
+            des:data.des,
+        })
+    });
+    app.post('/updateName',auth,(req,res)=>{
+        let {name,des} = req.body;
+        let data = Read(dataPath);
+        let temp = {...data};
+        temp.name= name;
+        temp.des=des;
+        Write(dataPath,temp);
+        res.redirect('/datas')
+    });
+    app.get('/deletedes',auth,(req,res)=>{
+        
+        let data = Read(dataPath);
+        let temp = {...data};
+        
+        temp.des='no data';
+        Write(dataPath,temp);
+        res.redirect('/datas')
+    })
 // set login route 
     app.post('/login',(req,res)=>{
         let {username , password} = req.body;

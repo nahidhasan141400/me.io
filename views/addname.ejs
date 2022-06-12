@@ -58,7 +58,7 @@
       <img src="./img/text-me.io.png" alt="" />
       <h1>Edit name and description</h1>
     </header>
-    <main>
+    <main> 
       <nav>
         <ol>
           <li>
@@ -68,7 +68,7 @@
             <a href="#"><i class="fa-solid fa-database"></i></a>
           </li>
           <li>
-            <a class="active" href="#"><i class="fa-solid fa-pen-to-square"></i></a>
+            <a class="active" href="/datas"><i class="fa-solid fa-pen-to-square"></i></a>
           </li>
           <li>
             <a href="/logout"><i class="fa-solid fa-arrow-right-from-bracket"></i></i></a>
@@ -76,7 +76,7 @@
         </ol>
       </nav>
       <div class="main-content">
-          <form action="/" method="post">
+          <form action="/updateName" method="post">
         <!-- all data gose heare  -->
         <div class="show-data">
             <div class="titel">
@@ -89,7 +89,7 @@
                 </div>
                 <div class="show-body">
                     <div class="data-input">
-                        <input value="nahid hasan sagar" type="text">
+                        <input name="name" value="<%= name %>" type="text">
                     </div>
                     
                 </div>
@@ -98,7 +98,7 @@
                 </div>
                 <div class="show-body">
                     <div class="data-input">
-                        <textarea name="" id="" value="'naidhasansagar" cols="30" rows="10">klasfdjlkasj jkljasd f;kjjfa;lksjdfkl klasjdfkl;j</textarea>
+                        <textarea name="des" id="" value="'naidhasansagar" cols="30" rows="10"><%= des %></textarea>
                     </div>
                 </div>
                 <div class="titel">

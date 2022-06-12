@@ -6,7 +6,6 @@ const cookiePath = path.join(__dirname,path.normalize('../data/cook.json'));
 
 let auth=(req,res,next)=>{
     let {cook} = Read(cookiePath);
-    console.log(cook);
     if(req.cookies.me === cook){
         next()
     }else{
@@ -15,7 +14,6 @@ let auth=(req,res,next)=>{
 }
 let Unauth=(req,res,next)=>{
     let {cook} = Read(cookiePath);
-    console.log(cook);
     if(req.cookies.me !== cook){
         next()
     }else{
