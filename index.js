@@ -127,6 +127,20 @@ let {auth,Unauth} = require('./medelware/auth');
         Write(dataPath,tempdata);
         res.redirect('/datas');
     })
+    // add link 
+    app.get('/addlink',auth,(req,res)=>{
+        res.render('addlink')
+    })
+    app.post('/addlink',auth,(req,res)=>{
+        const {name,link} = req.body;
+        let data = Read(dataPath);
+        let tempdata = {...data};
+        tempdata.links[name] = link;
+        
+        Write(dataPath,tempdata);
+        res.redirect('/datas')
+
+    })
     // edit name and ds
     app.get('/editName',auth,(req,res)=>{
         let data = Read(dataPath);
@@ -168,6 +182,9 @@ let {auth,Unauth} = require('./medelware/auth');
         
     })
     app.get('/logout',(req,res)=>{
+        let newcook = uuidv4();
+        res.cookie('me',newcook);
+        Write(cookPath,{cook : newcook})
         res.cookie('me','');
         res.redirect('/')
     })
