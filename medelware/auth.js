@@ -9,7 +9,7 @@ let auth=(req,res,next)=>{
     if(req.cookies.me === cook){
         next()
     }else{
-        return res.render('login',{err:"frist you have to login!"})
+        return res.render('login',{msg:"frist you have to login!"})
     }
 }
 let Unauth=(req,res,next)=>{

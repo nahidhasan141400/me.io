@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
-    <link rel="shortcut icon" href="./img/logo.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="../img/logo.ico" type="image/x-icon" />
     <!-- link  -->
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/fontawesome.min.js"
@@ -20,8 +20,8 @@
       referrerpolicy="no-referrer"
     />
     <!-- link  -->
-    <link rel="stylesheet" href="./css/user.css" />
-    <link rel="stylesheet" href="./css/flip-to-square.css" />
+    <link rel="stylesheet" href="../css/user.css" />
+    <link rel="stylesheet" href="../css/flip-to-square.css" />
     <title>me.io</title>
   </head>
   <body>
@@ -55,7 +55,7 @@
     </div>
     <!-- loader end  -->
     <header>
-      <img src="./img/text-me.io.png" alt="" />
+      <img src="../img/text-me.io.png" alt="" />
       <h1>Add social link</h1>
     </header>
     <main> 
@@ -76,8 +76,9 @@
         </ol>
       </nav>
       <div class="main-content">
-        <h3 style="width: 100%;color:red;text-align: center;padding-top: 5px;"><%= err %></h3>
-          <form action="/addlink" method="post">
+        
+          <form action="/updatelink" method="post">
+            
         <!-- all data gose heare  -->
         <div class="show-data">
             <div class="titel">
@@ -90,7 +91,7 @@
                 </div>
                 <div class="show-body">
                     <div class="data-input">
-                        <input style="border: 2px solid blue;margin: 5px 0 20px 0;" name="name" value="" type="text">
+                        <input readonly style="border: 2px solid blue;margin: 5px 0 20px 0;" name="name" value="<%= data.name %>" type="text">
                     </div>
                     
                 </div>
@@ -99,11 +100,11 @@
                 </div>
                 <div class="show-body">
                     <div class="data-input">
-                        <input style="border: 2px solid blue;margin: 5px 0 20px 0;" name="link" value="" type="text">
+                        <input  style="border: 2px solid blue;margin: 5px 0 20px 0;" name="link" value="<%= data.link %>" type="text">
                     </div>
                 </div>
                 <div class="titel">
-                    <button type="submit">add</button>
+                    <button type="submit">update</button>
                 </div>
             </div>
         </form>
@@ -111,6 +112,6 @@
       </div>
     </main>
     
-    <script src="./js/loader.js"></script>
+    <script src="../js/loader.js"></script>
   </body>
 </html>
