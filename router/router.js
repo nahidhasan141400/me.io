@@ -120,6 +120,15 @@ function rout(app){
                 Write(dataPath,temp);
                 res.redirect('/datas')
             });
+            app.get('/deletename',auth,(req,res)=>{
+                
+                let data = Read(dataPath);
+                let temp = {...data};
+                
+                temp.name='no data';
+                Write(dataPath,temp);
+                res.redirect('/datas')
+            })
             app.get('/deletedes',auth,(req,res)=>{
                 
                 let data = Read(dataPath);
@@ -133,11 +142,16 @@ function rout(app){
         let login = require('./login')(app);
             
         // api route 
+        app.get('/tree',auth,(req,res)=>{
+            res.redirect('/data');
+        })
 
         app.get('/data',(req,res)=>{
             let data = Read(dataPath);
             res.status(200).json(data);
-        })
+        });
+        let api = require("./api");
+        api(app);
 
 
 }

@@ -70,7 +70,7 @@
             <a class="active"  href="#"><i class="fa-solid fa-link"></i></a>
           </li>
           <li>
-            <a href="#"><i class="fa-solid fa-database"></i></a>
+            <a href="/tree"><i class="fa-solid fa-database"></i></a>
           </li>
           <li>
             <a href="/datas"><i class="fa-solid fa-pen-to-square"></i></a>
@@ -83,8 +83,18 @@
       <div class="main-content">
         <!-- all data gose heare  -->
         <div class="link-api-help">
-          <h1>data api <i class="fa-solid fa-link"></i>url</h1>
+          <h1>All Data api <i class="fa-solid fa-link"></i>url</h1>
           <input type="text" value="" id="data-inp" readonly/>
+        </div>
+        <!-- end -->
+        <div class="link-api-help">
+          <h1>Get Links Data <i class="fa-solid fa-link"></i>url</h1>
+          <input type="text" value="" id="link" readonly/>
+        </div>
+        <!-- end  -->
+        <div class="link-api-help">
+          <h1>Get Project Data <i class="fa-solid fa-link"></i>url</h1>
+          <input type="text" value="" id="project" readonly/>
         </div>
         <!-- end  -->
       </div>
@@ -92,6 +102,10 @@
     <script>
       let dataInp = document.querySelector('#data-inp');
       dataInp.value = `http://${window.location.host}/data`;
+      let link = document.querySelector('#link');
+      link.value = `http://${window.location.host}/data/link`;
+      let project = document.querySelector('#project');
+      project.value = `http://${window.location.host}/data/projects`;
     </script>
     <script src="./js/loader.js"></script>
   </body>

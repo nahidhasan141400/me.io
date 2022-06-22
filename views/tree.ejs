@@ -3,8 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/jstree.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/themes/default/style.min.css" />
     <link rel="shortcut icon" href="./img/logo.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./css/bg.css">
     <!-- link  -->
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/fontawesome.min.js"
@@ -54,21 +58,26 @@
       </div>
     </div>
     <!-- loader end  -->
+      
+    <div class="bg1"></div>
+    <div class="bg2"></div>
+    <div class="bg3"></div>
+      
     <header>
       <img src="./img/text-me.io.png" alt="" />
-      <h1>Add social link</h1>
+      <h1>data</h1>
     </header>
-    <main> 
+    <main>
       <nav>
         <ol>
           <li>
             <a href="/api"><i class="fa-solid fa-link"></i></a>
           </li>
           <li>
-            <a href="/tree"><i class="fa-solid fa-database"></i></a>
+            <a href="#"><i class="fa-solid fa-database"></i></a>
           </li>
           <li>
-            <a class="active" href="/datas"><i class="fa-solid fa-pen-to-square"></i></a>
+            <a class="active" href="#"><i class="fa-solid fa-pen-to-square"></i></a>
           </li>
           <li>
             <a href="/logout"><i class="fa-solid fa-arrow-right-from-bracket"></i></i></a>
@@ -76,41 +85,37 @@
         </ol>
       </nav>
       <div class="main-content">
-        <h3 style="width: 100%;color:red;text-align: center;padding-top: 5px;"><%= err %></h3>
-          <form action="/addlink" method="post">
         <!-- all data gose heare  -->
-        <div class="show-data">
-            <div class="titel">
-                <h1>link</h1>
-            </div>
-            <!-- nahid  -->
-            <div class="s-data">
-                <div class="header">
-                    <h1>name</h1>
-                </div>
-                <div class="show-body">
-                    <div class="data-input">
-                        <input style="border: 2px solid blue;margin: 5px 0 20px 0;" name="name" value="" type="text">
-                    </div>
-                    
-                </div>
-                <div class="header">
-                    <h1>link</h1>
-                </div>
-                <div class="show-body">
-                    <div class="data-input">
-                        <input style="border: 2px solid blue;margin: 5px 0 20px 0;" name="link" value="" type="text">
-                    </div>
-                </div>
-                <div class="titel">
-                    <button type="submit">add</button>
-                </div>
-            </div>
-        </form>
+        <div style="
+                      padding: 10px;
+                      margin: auto;
+                      margin-top: 10px;
+                      width: 95%;
+                      background: #cdcdcd;
+                    " class="tree">
+          <!-- tree -->
+          <div id="jstree">
+            <!-- in this example the tree is populated from inline HTML -->
+            <ul>
+              <li>Root node 1
+                <ul>
+                  <li>Child node 1</li>
+                  <li>Child node 2
+                   
+                  </li>
+                </ul>
+              </li>
+              <li>Root node 2</li>
+            </ul>
+          </div>
+          
+          <!-- tree -->
+        </div>
         <!-- end  -->
       </div>
     </main>
     
     <script src="./js/loader.js"></script>
+    <script src="./js/tree.js"></script>
   </body>
 </html>
