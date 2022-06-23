@@ -97,7 +97,44 @@
           <input type="text" value="" id="project" readonly/>
         </div>
         <!-- end  -->
+        <div class="link-api-help">
+          <h1>Uplaod Your Json Data <i class="fa-solid fa-link"></i>url</h1>
+          <form action="/upload" method="post" enctype="multipart/form-data">
+          <input accept="application/json" placeholder="choose json file" type="file" required value="" name="file" />
+          <input type="submit" value="upload">
+        </form>
+        <!-- end -->
+        
+
       </div>
+      <div class="link-api-help">
+        <h1>Get My Data <i class="fa-solid fa-link"></i>url</h1>
+        <input type="text" value="" id="my" readonly/>
+      </div>
+      <div class="link-api-help">
+        <h1>uplodae file name</h1>
+          <div class="link-api-help">
+            <%  data.forEach(element => { %>
+              <h2 style="
+              color: blue;
+              font-size: 19px;
+              font-weight: 400;
+              width: 90%;
+              display: flex;
+              justify-content: space-between;
+              padding: 5px;
+              margin: 5px;
+              border-left: 2px dotted red;
+          "><span><%= element %></span> <span><a href="/mydatadelete/<%= element %>"><i class="fa-solid fa-trash"></i></a></span></h2>
+            <% }); %>
+           
+            
+          </div>
+      </div>
+      </div>
+      <!-- end -->
+      
+      <!-- end -->
     </main>
     <script>
       let dataInp = document.querySelector('#data-inp');
@@ -106,6 +143,8 @@
       link.value = `http://${window.location.host}/data/link`;
       let project = document.querySelector('#project');
       project.value = `http://${window.location.host}/data/projects`;
+      let my = document.querySelector('#my');
+      my.value = `http://${window.location.host}/data/{your json file name}`;
     </script>
     <script src="./js/loader.js"></script>
   </body>

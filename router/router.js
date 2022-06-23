@@ -11,12 +11,13 @@
     
     const dataPath = path.join(__dirname,path.normalize('../data/data.json'));
     const cookPath = path.join(__dirname,path.normalize('../data/cook.json'))
+    const mydt = path.join(__dirname,path.normalize('../data/mydata.json'))
     
     
 
 
 function rout(app){
-            
+           
             
         // set route 
         // set home route 
@@ -25,13 +26,8 @@ function rout(app){
             });
             
             app.get('/api',auth,(req,res)=>{
-                // console.log(req.cookies);
-                // if (req.cookies.me === '1234') {
-                //     res.render('user')
-                // }else{
-                //     res.redirect('/login');
-                // }
-                res.render('user')
+                let data =  Read(mydt)
+                res.render('user',{data})
                 
             })
             app.get('/datas',auth,(req,res)=>{

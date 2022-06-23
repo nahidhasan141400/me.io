@@ -3,12 +3,12 @@
   padding: 0;
   margin: 0;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   outline: none;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
-} 
+}
 
 body {
   width: 100%;
@@ -25,11 +25,11 @@ header {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 header img {
@@ -49,8 +49,15 @@ main {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 9fr;
-      grid-template-columns: 1fr 9fr;
+  grid-template-columns: 1fr 9fr;
   position: relative;
+}
+@media (max-width: 750px) {
+  main {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 10fr;
+  }
 }
 
 main nav {
@@ -60,11 +67,11 @@ main nav {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 main nav ol {
@@ -77,15 +84,37 @@ main nav ol {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+@media (max-width: 750px) {
+  main nav ol {
+    width: 80%;
+    height: 90%;
+    background: #25283d;
+    position: relative;
+    border-radius: 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+    -ms-flex-pack: space-evenly;
+    justify-content: space-evenly;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: row;
+  }
 }
 
 main nav ol li {
@@ -104,11 +133,11 @@ main nav ol li a {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   text-decoration: none;
   color: #25283d;
   font-size: 25px;
@@ -123,7 +152,7 @@ main nav ol li a:hover {
 
 main nav ol li a:active {
   -webkit-transform: scale(107%);
-          transform: scale(107%);
+  transform: scale(107%);
   border: 6px solid #cdcdcd;
 }
 
@@ -239,14 +268,14 @@ main .main-content::-webkit-scrollbar-thumb {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 .show-data .s-data .show-body .data-input {
   -webkit-box-flex: 9;
-      -ms-flex: 9;
-          flex: 9;
+  -ms-flex: 9;
+  flex: 9;
   position: relative;
 }
 
@@ -288,14 +317,14 @@ main .main-content::-webkit-scrollbar-thumb {
 
 .show-data .s-data .show-body .option {
   -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  -ms-flex: 1;
+  flex: 1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
   font-size: 20px;
 }
 
