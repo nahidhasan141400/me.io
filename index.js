@@ -115,5 +115,5 @@ app.use((err,req,res,next)=>{
 })
 // init server 
 app.listen(PORT , () => {
-    console.log(`Listening on port ${PORT}`)
+    console.log(`Go to localhost:${PORT}`)
 })
