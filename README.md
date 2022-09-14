@@ -30,7 +30,7 @@ $ npm install
 
  - [ ] after complied installation  now start the server type
  
- ```sh
+```sh
 $ npm n
 ```
 
