@@ -4,7 +4,7 @@
   "description": "this is headless cms for portfolio website",
   "main": "index.js",
   "scripts": {
-    "n": "node index.js"
+    "boom": "node index.js"
   },
   "repository": {
     "type": "git",

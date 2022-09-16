@@ -31,7 +31,7 @@ $ npm install
  - [ ] after complied installation  now start the server type
  
 ```sh
-$ npm n
+$ npm boom
 ```
 
 > now there you can see an address on terminal copy this and enter on a browser.
