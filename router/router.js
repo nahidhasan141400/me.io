@@ -102,7 +102,7 @@ function rout(app){
             // edit name and ds
             app.get('/editName',auth,(req,res)=>{
                 let data = Read(dataPath);
-                res.render('addName',{
+                res.render('addname.ejs',{
                     name:data.name,
                     des:data.des,
                 })
